@@ -1,0 +1,176 @@
+/* src/pages/GenreBooks.css */
+
+.genre-books-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #e6f7ff, #cceeff); /* Light blue gradient */
+  box-sizing: border-box;
+  overflow-y: auto; /* Allow scrolling for long content */
+  position: relative; /* For back button positioning */
+}
+
+.genre-books-container h1 {
+  font-size: 2.8em;
+  color: #0056b3; /* Darker blue for heading */
+  margin-bottom: 30px;
+  text-align: center;
+  border-bottom: 3px solid rgba(0, 86, 179, 0.2); /* Subtle underline */
+  padding-bottom: 15px;
+  width: 80%;
+  max-width: 800px;
+}
+
+.back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: #007bff;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  z-index: 10;
+}
+
+.back-button:hover {
+  background-color: #0056b3;
+  transform: translateX(-3px);
+}
+
+.no-books-found {
+  font-size: 1.2em;
+  color: #666;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.genre-books-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Responsive grid */
+  gap: 30px;
+  width: 100%;
+  max-width: 1200px;
+  padding: 20px 0;
+}
+
+.book-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding-bottom: 20px; /* Space for button */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.book-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.book-image {
+  width: 100%;
+  height: 250px; /* Fixed height for consistent card size */
+  object-fit: cover; /* Ensures image covers the area, cropping if necessary */
+  border-bottom: 1px solid #eee;
+  margin-bottom: 15px;
+}
+
+.book-details {
+  padding: 0 20px; /* Padding left/right */
+  flex-grow: 1; /* Allows details to take available space */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.book-details h3 {
+  font-size: 1.6em;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.book-details p {
+  font-size: 0.95em;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 15px;
+  flex-grow: 1; /* Allows description to push button down */
+}
+
+.read-more-button {
+  background-color: #28a745; /* Green for "Read More" */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: auto; /* Pushes button to the bottom of the card */
+  display: inline-block; /* To allow auto margin to work */
+}
+
+.read-more-button:hover {
+  background-color: #218838;
+  transform: translateY(-2px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .genre-books-container {
+    padding: 20px 15px;
+  }
+
+  .genre-books-container h1 {
+    font-size: 2.2em;
+    width: 90%;
+  }
+
+  .back-button {
+    top: 15px;
+    left: 15px;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+
+  .genre-books-grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+  }
+
+  .book-image {
+    height: 200px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .genre-books-container h1 {
+    font-size: 1.8em;
+    padding-bottom: 10px;
+  }
+
+  .genre-books-grid {
+    grid-template-columns: 1fr; /* Single column on very small screens */
+    gap: 25px;
+  }
+
+  .book-card {
+    max-width: 300px;
+    margin: 0 auto; /* Center single column cards */
+  }
+
+  .book-image {
+    height: 180px;
+  }
+}

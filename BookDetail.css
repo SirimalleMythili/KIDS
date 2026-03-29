@@ -1,0 +1,161 @@
+/* src/pages/BookDetail.css */
+
+.book-detail-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Align items to the start to allow scrolling if content is long */
+  min-height: 100vh;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #f0f8ff, #e0f2f7); /* Light, gentle gradient background */
+  box-sizing: border-box;
+  overflow-y: auto; /* Allow vertical scrolling if content overflows */
+}
+
+.book-detail-card {
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  max-width: 900px;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative; /* For positioning the back button */
+}
+
+.back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: #007bff;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  z-index: 10; /* Ensure it's above other content */
+}
+
+.back-button:hover {
+  background-color: #0056b3;
+  transform: translateX(-3px);
+}
+
+.book-detail-image {
+  max-width: 100%;
+  width: 300px; /* Specific width for the image */
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  margin-bottom: 25px;
+}
+
+.book-detail-content {
+  text-align: left; /* Align text within the content block to the left */
+  width: 100%; /* Take full width of the card */
+  max-width: 700px; /* Max width for readability of long text */
+}
+
+.book-detail-content h1 {
+  font-size: 2.5em;
+  color: #333;
+  margin-bottom: 15px;
+  text-align: center; /* Keep title centered */
+}
+
+.book-detail-description {
+  font-size: 1.1em;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  font-style: italic;
+  text-align: center; /* Keep description centered */
+}
+
+.storyline-heading {
+  font-size: 1.8em;
+  color: #007bff;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 10px;
+  text-align: center; /* Keep heading centered */
+}
+
+.book-detail-storyline {
+  font-size: 1.1em;
+  color: #333;
+  line-height: 1.8;
+  white-space: pre-wrap; /* Preserves whitespace and line breaks */
+  margin-bottom: 30px;
+}
+
+.order-now-button {
+  background-color: #28a745; /* Green for action button */
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  margin-top: 20px;
+  box-shadow: 0 4px 10px rgba(40, 167, 69, 0.3);
+}
+
+.order-now-button:hover {
+  background-color: #218838;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(40, 167, 69, 0.4);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .book-detail-container {
+    padding: 20px 15px;
+  }
+
+  .book-detail-card {
+    padding: 20px;
+  }
+
+  .back-button {
+    top: 15px;
+    left: 15px;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+
+  .book-detail-image {
+    width: 250px;
+  }
+
+  .book-detail-content h1 {
+    font-size: 2em;
+  }
+
+  .book-detail-description,
+  .book-detail-storyline {
+    font-size: 1em;
+  }
+
+  .storyline-heading {
+    font-size: 1.5em;
+  }
+
+  .order-now-button {
+    padding: 12px 25px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .book-detail-image {
+    width: 200px;
+  }
+}
